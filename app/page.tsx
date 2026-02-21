@@ -17,6 +17,9 @@ import {
   ChevronRight,
   Sparkles,
   Quote,
+  Zap,
+  Target,
+  Brain,
 } from "lucide-react";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import {
@@ -38,7 +41,7 @@ function HeroHeadline() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 + i * 0.06, duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-          className="inline-block mr-[0.3em]"
+          className={`inline-block ${i < words.length - 1 ? "mr-[0.3em]" : ""}`}
         >
           {word}
         </motion.span>
@@ -306,6 +309,84 @@ export default function HomePage() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* THE DIFFERENCE SECTION */}
+      {/* ============================================ */}
+      <section className="py-24 lg:py-32 bg-surface">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <ScrollReveal>
+              <p className="section-label">THE DIFFERENCE</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-dark mb-6">
+                Not Another{" "}
+                <span className="gradient-text">HRMS Add-On</span>
+              </h2>
+              <p className="text-lg text-text-secondary leading-relaxed mb-8">
+                While others extend 50+ features you&apos;ll never use, we focus
+                exclusively on performance intelligence.
+              </p>
+              <p className="text-text-secondary leading-relaxed mb-8">
+                90% of HRMS platforms prioritize onboarding, payroll and
+                compliance—performance is just an afterthought. Organizations
+                typically use only 50-60% of system capabilities. We built
+                something different: intelligent, continuous performance
+                management that people actually adopt.
+              </p>
+              <Link
+                href="/platform"
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-base hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+              >
+                See the Platform
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {[
+                  {
+                    icon: Zap,
+                    title: "Purpose-Built",
+                    description: "Engineered exclusively for performance—not bolted onto payroll",
+                    gradient: "from-amber-500 to-orange-500",
+                  },
+                  {
+                    icon: Brain,
+                    title: "AI-Native",
+                    description: "Intelligence woven into every interaction, not an add-on layer",
+                    gradient: "from-purple-500 to-violet-500",
+                  },
+                  {
+                    icon: Target,
+                    title: "High Adoption",
+                    description: "90%+ adoption rates because it fits how people actually work",
+                    gradient: "from-green-500 to-emerald-500",
+                  },
+                  {
+                    icon: MessageSquare,
+                    title: "Continuous",
+                    description: "Real-time feedback loops, not once-a-year review ceremonies",
+                    gradient: "from-blue-500 to-cyan-500",
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="interactive-card group p-6">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 card-icon transition-all duration-400 shadow-lg`}>
+                      <item.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-base font-bold text-primary-dark font-heading mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 

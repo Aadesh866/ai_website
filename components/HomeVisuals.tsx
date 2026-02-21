@@ -200,27 +200,41 @@ export function DashboardMockup() {
 // Counter animation component
 export function AnimatedCounter({ value, suffix = "", prefix = "" }: { value: string; suffix?: string; prefix?: string }) {
     const [count, setCount] = useState(0);
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const ref = useRef<HTMLSpanElement>(null);
     const numericValue = parseInt(value.replace(/[^0-9]/g, ""));
 
     useEffect(() => {
-        if (!isInView) return;
-        const duration = 2000;
-        const steps = 60;
-        const stepValue = numericValue / steps;
-        let current = 0;
-        const interval = setInterval(() => {
-            current += stepValue;
-            if (current >= numericValue) {
-                setCount(numericValue);
-                clearInterval(interval);
-            } else {
-                setCount(Math.floor(current));
-            }
-        }, duration / steps);
-        return () => clearInterval(interval);
-    }, [isInView, numericValue]);
+        const el = ref.current;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        setHasAnimated(true);
+                        const duration = 2000;
+                        const steps = 60;
+                        const stepValue = numericValue / steps;
+                        let current = 0;
+                        const interval = setInterval(() => {
+                            current += stepValue;
+                            if (current >= numericValue) {
+                                setCount(numericValue);
+                                clearInterval(interval);
+                            } else {
+                                setCount(Math.floor(current));
+                            }
+                        }, duration / steps);
+                    }
+                });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+        );
+
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, [numericValue, hasAnimated]);
 
     return (
         <span ref={ref} className="tabular-nums">
