@@ -1,65 +1,399 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  UserCog,
+  History,
+  Scale,
+  FileText,
+  TrendingDown,
+  MessageSquare,
+  BarChart3,
+  ShieldCheck,
+  CheckCircle2,
+  ArrowRight,
+  Play,
+  ChevronRight,
+  Sparkles,
+  Quote,
+} from "lucide-react";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
+import {
+  ParticleField,
+  DashboardMockup,
+  AnimatedCounter,
+  NetworkVisualization,
+  LogoMarquee,
+} from "@/components/HomeVisuals";
+
+// Hero headline with word-by-word stagger animation
+function HeroHeadline() {
+  const words = "Can your employees clearly see how contribution translates into outcomes?".split(" ");
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight max-w-5xl">
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 + i * 0.06, duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+          className="inline-block mr-[0.3em]"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </h1>
+  );
+}
+
+const problemCards = [
+  {
+    icon: UserCog,
+    title: "Leadership Bias",
+    description: "Individual styles distort culture and create inconsistent standards",
+  },
+  {
+    icon: History,
+    title: "Backward-Looking",
+    description: "Annual reviews dissect the past instead of shaping the future",
+  },
+  {
+    icon: Scale,
+    title: "Perceived Unfairness",
+    description: "Employees experience evaluations as ad hoc and opaque",
+  },
+  {
+    icon: FileText,
+    title: "Compliance Burden",
+    description: "Performed as a ritual, not a strategic growth tool",
+  },
+  {
+    icon: TrendingDown,
+    title: "Declining Relevance",
+    description: "Losing credibility as work evolves beyond hierarchies",
+  },
+];
+
+const platformCards = [
+  {
+    icon: MessageSquare,
+    title: "Real-Time Feedback",
+    description: "Reach employees when behavior can still change, not weeks later",
+  },
+  {
+    icon: BarChart3,
+    title: "Data-Driven Clarity",
+    description: "Clear rationale for ratings backed by intelligence, not manager memory",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Confident Decisions",
+    description: "Leaders make talent decisions with certainty, not just documentation",
+  },
+];
+
+const stats = [
+  { value: "90", suffix: "%", label: "of HRMS platforms treat performance as an afterthought" },
+  { value: "55", suffix: "%", label: "average feature adoption in traditional systems" },
+  { value: "3", suffix: "x", label: "more likely to improve with continuous feedback" },
+  { value: "40", suffix: "%", label: "reduction in manager bias with AI assistance" },
+];
+
+export default function HomePage() {
+  return (
+    <>
+      {/* ============================================ */}
+      {/* HERO SECTION */}
+      {/* ============================================ */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden animated-gradient">
+        <ParticleField />
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-sm text-blue-200 mb-8"
+            >
+              <Sparkles className="w-4 h-4" />
+              AI-Powered Performance Intelligence
+            </motion.div>
+
+            <HeroHeadline />
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="mt-8 text-lg sm:text-xl text-blue-200/80 max-w-2xl mx-auto leading-relaxed"
+            >
+              The performance intelligence platform built for how work actually
+              happens today
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.6 }}
+              className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-base hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+              >
+                Get a Demo
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <button className="group inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white rounded-2xl font-semibold text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm">
+                <Play className="w-4 h-4" />
+                Watch Video
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Dashboard Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.8, duration: 1, ease: [0.25, 0.4, 0.25, 1] }}
+            className="floating"
+          >
+            <DashboardMockup />
+          </motion.div>
+        </div>
+
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      </section>
+
+      {/* ============================================ */}
+      {/* LOGO BAR */}
+      {/* ============================================ */}
+      <section className="py-12 border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollReveal>
+            <p className="text-center text-sm text-text-secondary font-medium mb-6">
+              Trusted by forward-thinking organizations
+            </p>
+          </ScrollReveal>
+          <LogoMarquee />
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* PROBLEM SECTION */}
+      {/* ============================================ */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollReveal className="text-center mb-16">
+            <p className="section-label">THE PROBLEM</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-dark">
+              Legacy systems weren't built for{" "}
+              <span className="gradient-text">modern work</span>
+            </h2>
+          </ScrollReveal>
+
+          <StaggerContainer
+            staggerDelay={0.15}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {problemCards.map((card, i) => (
+              <StaggerItem
+                key={card.title}
+                className={i >= 3 ? "lg:col-span-1 lg:mx-auto lg:max-w-md" : ""}
+              >
+                <div className="interactive-card group h-full flex flex-col items-start gap-4 p-8">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center card-icon transition-all duration-400">
+                    <card.icon className="w-7 h-7 text-text-secondary" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary-dark font-heading">
+                    {card.title}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* THE SHIFT SECTION */}
+      {/* ============================================ */}
+      <section className="py-24 lg:py-32 bg-surface">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <ScrollReveal>
+              <p className="section-label">THE SHIFT</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-dark mb-8">
+                Work has changed.{" "}
+                <span className="gradient-text">Has your performance system?</span>
+              </h2>
+              <div className="space-y-5 mb-8">
+                {[
+                  "Structurally fluid and cross-functional",
+                  "Driven by rapid innovation and deep-tech roles",
+                  "Interconnected impact across teams and geographies",
+                ].map((point, i) => (
+                  <motion.div
+                    key={point}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + i * 0.15 }}
+                    className="flex items-start gap-4"
+                  >
+                    <CheckCircle2 className="w-6 h-6 text-primary-brand flex-shrink-0 mt-0.5" />
+                    <span className="text-lg text-text-primary">{point}</span>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
+                <p className="text-text-secondary leading-relaxed italic">
+                  &ldquo;Expecting a single manager to evaluate performance
+                  holistically is unrealistic—and unfair.&rdquo;
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Right Visualization */}
+            <ScrollReveal delay={0.3}>
+              <NetworkVisualization />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* PLATFORM PREVIEW */}
+      {/* ============================================ */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <ScrollReveal className="text-center mb-16">
+            <p className="section-label">THE PLATFORM</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-dark">
+              Finally, answers to the{" "}
+              <span className="gradient-text">hard questions</span>
+            </h2>
+          </ScrollReveal>
+
+          <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {platformCards.map((card) => (
+              <StaggerItem key={card.title}>
+                <div className="interactive-card group h-full flex flex-col items-start gap-5 p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center card-icon transition-all duration-400">
+                    <card.icon className="w-8 h-8 text-primary-brand" />
+                  </div>
+                  <h3 className="text-xl font-bold text-primary-dark font-heading">
+                    {card.title}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed flex-1">
+                    {card.description}
+                  </p>
+                  <Link
+                    href="/platform"
+                    className="inline-flex items-center gap-1 text-sm font-semibold text-primary-brand hover:gap-2 transition-all duration-300"
+                  >
+                    Learn more <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* STATS SECTION */}
+      {/* ============================================ */}
+      <section className="py-24 lg:py-32 bg-surface">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <StaggerContainer staggerDelay={0.12} className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {stats.map((stat) => (
+              <StaggerItem key={stat.label} className="text-center">
+                <p className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-brand font-heading mb-3">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </p>
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed max-w-[200px] mx-auto">
+                  {stat.label}
+                </p>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* TESTIMONIAL */}
+      {/* ============================================ */}
+      <section className="py-24 lg:py-32 bg-blue-50">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <ScrollReveal className="text-center">
+            <Quote className="w-16 h-16 text-primary-brand/20 mx-auto mb-8" />
+            <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-primary-dark leading-snug mb-8">
+              &ldquo;For the first time, we can see performance clearly across
+              our matrix organization without relying on a single manager&apos;s
+              perspective.&rdquo;
+            </blockquote>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-brand to-secondary flex items-center justify-center text-white font-bold">
+                JC
+              </div>
+              <div className="text-left">
+                <p className="font-semibold text-primary-dark">Jessica Chen</p>
+                <p className="text-sm text-text-secondary">
+                  VP of People, TechCorp Inc.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* FINAL CTA */}
+      {/* ============================================ */}
+      <section className="relative py-24 lg:py-32 bg-primary-dark overflow-hidden">
+        {/* Decorative grid overlay */}
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Turn the page on broken performance management
+            </h2>
+            <p className="text-lg text-blue-200/70 mb-10">
+              If you believe these questions deserve clear answers, let&apos;s
+              talk.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+              <input
+                type="email"
+                placeholder="Your work email"
+                className="w-full sm:flex-1 px-6 py-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-primary-brand focus:ring-2 focus:ring-primary-brand/30 backdrop-blur-sm transition-all"
+              />
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1 text-center"
+              >
+                Get Started
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
