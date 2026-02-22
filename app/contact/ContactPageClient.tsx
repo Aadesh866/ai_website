@@ -40,15 +40,15 @@ const faqs = [
     },
     {
         question: "Can you integrate with our existing HRIS?",
-        answer: "Yes! PerfectView integrates with 50+ HRIS and productivity tools including Workday, BambooHR, SAP SuccessFactors, ADP, Slack, Microsoft Teams, and more. Our API also supports custom integrations.",
+        answer: "Yes! Purple Hub integrates with 50+ HRIS and productivity tools including Workday, BambooHR, SAP SuccessFactors, ADP, Slack, Microsoft Teams, and more. Our API also supports custom integrations.",
     },
     {
         question: "How do you handle data security?",
-        answer: "We take security seriously. PerfectView is SOC 2 Type II certified, GDPR compliant, and ISO 27001 certified. All data is encrypted at rest and in transit. We offer single-tenant deployment options for enterprise clients.",
+        answer: "We take security seriously. Purple Hub is SOC 2 Type II certified, GDPR compliant, and ISO 27001 certified. All data is encrypted at rest and in transit. We offer single-tenant deployment options for enterprise clients.",
     },
     {
         question: "What's the pricing model?",
-        answer: "PerfectView uses a per-employee-per-month pricing model with volume discounts. We offer Starter, Professional, and Enterprise tiers. Contact us for a custom quote based on your team size and needs.",
+        answer: "Purple Hub uses a per-employee-per-month pricing model with volume discounts. We offer Starter, Professional, and Enterprise tiers. Contact us for a custom quote based on your team size and needs.",
     },
     {
         question: "Do you offer change management support?",
@@ -56,7 +56,7 @@ const faqs = [
     },
     {
         question: "Is there a minimum team size?",
-        answer: "PerfectView is designed for organizations with 50+ employees. For teams of 50-200, our Starter plan provides all core features. Larger organizations benefit from our Professional and Enterprise plans with advanced analytics and customization.",
+        answer: "Purple Hub is designed for organizations with 50+ employees. For teams of 50-200, our Starter plan provides all core features. Larger organizations benefit from our Professional and Enterprise plans with advanced analytics and customization.",
     },
 ];
 
@@ -116,12 +116,12 @@ export default function ContactPageClient() {
     return (
         <>
             {/* HERO */}
-            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary-dark via-blue-900 to-primary-dark overflow-hidden">
+            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary-dark via-purple-900 to-primary-dark overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <div
                         className="absolute inset-0"
                         style={{
-                            backgroundImage: "radial-gradient(circle at 50% 50%, rgba(59,130,246,0.3) 0%, transparent 50%)",
+                            backgroundImage: "radial-gradient(circle at 50% 50%, rgba(139,92,246,0.3) 0%, transparent 50%)",
                         }}
                     />
                 </div>
@@ -129,7 +129,7 @@ export default function ContactPageClient() {
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-blue-200 mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-purple-200 mb-6"
                     >
                         <Sparkles className="w-4 h-4" />
                         Contact
@@ -149,7 +149,7 @@ export default function ContactPageClient() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="mt-6 text-lg text-blue-200/80 max-w-2xl mx-auto"
+                        className="mt-6 text-lg text-purple-200/80 max-w-2xl mx-auto"
                     >
                         Ready to transform how your organization approaches talent?
                     </motion.p>
@@ -285,7 +285,7 @@ export default function ContactPageClient() {
 
                                             <button
                                                 type="submit"
-                                                className="group inline-flex items-center gap-2 px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-base hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+                                                className="group inline-flex items-center gap-2 px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-base hover:bg-purple-600 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-1"
                                             >
                                                 <Send className="w-4 h-4" />
                                                 Send Message
@@ -353,11 +353,11 @@ export default function ContactPageClient() {
                                     <div className="space-y-3">
                                         <div className="flex items-center gap-3 text-sm text-text-secondary">
                                             <Mail className="w-4 h-4 text-primary-brand" />
-                                            hello@perfectview.ai
+                                            purplehub@gmail.com
                                         </div>
                                         <div className="flex items-center gap-3 text-sm text-text-secondary">
                                             <Phone className="w-4 h-4 text-primary-brand" />
-                                            +1 (555) 123-4567
+                                            +91 8904096161
                                         </div>
                                         <div className="flex items-start gap-3 text-sm text-text-secondary">
                                             <MapPin className="w-4 h-4 text-primary-brand mt-0.5" />
@@ -421,15 +421,15 @@ export default function ContactPageClient() {
                         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
                             Ready to get started?
                         </h2>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-200/70">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-purple-200/70">
                             <div className="flex items-center gap-2">
                                 <Mail className="w-5 h-5 text-primary-brand" />
-                                hello@perfectview.ai
+                                purplehub@gmail.com
                             </div>
-                            <div className="hidden sm:block w-1 h-1 rounded-full bg-blue-200/30" />
+                            <div className="hidden sm:block w-1 h-1 rounded-full bg-purple-200/30" />
                             <div className="flex items-center gap-2">
                                 <Phone className="w-5 h-5 text-primary-brand" />
-                                +1 (555) 123-4567
+                                +91 8904096161
                             </div>
                         </div>
                     </ScrollReveal>

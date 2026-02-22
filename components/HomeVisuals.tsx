@@ -77,7 +77,7 @@ export function DashboardMockup() {
                     </div>
                     <div className="flex-1 flex justify-center">
                         <div className="px-4 py-1 bg-white rounded-md text-xs text-text-secondary border border-border">
-                            app.perfectview.ai/dashboard
+                            app.purplehub.ai/dashboard
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ const features = [
         icon: MessageSquare,
         title: "Continuous Feedback Engine",
         description: "Real-time multi-source feedback that captures contributions as they happen",
-        gradient: "from-blue-500 to-cyan-400",
+        gradient: "from-purple-500 to-violet-400",
     },
     {
         icon: Brain,
@@ -134,7 +134,7 @@ function TimelineSection() {
                                 transition={{ delay: 0.5 + i * 0.3, duration: 0.6 }}
                                 className="text-center"
                             >
-                                <div className="w-20 h-20 rounded-2xl bg-white border-2 border-border shadow-lg mx-auto mb-6 flex items-center justify-center group hover:border-primary-brand hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-400">
+                                <div className="w-20 h-20 rounded-2xl bg-white border-2 border-border shadow-lg mx-auto mb-6 flex items-center justify-center group hover:border-primary-brand hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-400">
                                     <step.icon className="w-8 h-8 text-primary-brand" />
                                 </div>
                                 <p className="text-xs font-mono text-primary-brand font-bold mb-2">{step.num}</p>
@@ -153,12 +153,12 @@ export default function PlatformPageClient() {
     return (
         <>
             {/* HERO */}
-            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary-dark via-blue-900 to-primary-dark overflow-hidden">
+            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary-dark via-purple-900 to-primary-dark overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <div
                         className="absolute inset-0"
                         style={{
-                            backgroundImage: "radial-gradient(circle at 20% 50%, rgba(59,130,246,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(6,182,212,0.2) 0%, transparent 50%)",
+                            backgroundImage: "radial-gradient(circle at 20% 50%, rgba(139,92,246,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(168,85,247,0.2) 0%, transparent 50%)",
                         }}
                     />
                 </div>
@@ -167,7 +167,7 @@ export default function PlatformPageClient() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-blue-200 mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-purple-200 mb-6"
                     >
                         <Sparkles className="w-4 h-4" />
                         Platform
@@ -187,7 +187,7 @@ export default function PlatformPageClient() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6 }}
-                        className="mt-6 text-lg text-blue-200/80 max-w-2xl mx-auto"
+                        className="mt-6 text-lg text-purple-200/80 max-w-2xl mx-auto"
                     >
                         AI-powered continuous performance management that adapts to how your
                         teams actually work
@@ -200,7 +200,7 @@ export default function PlatformPageClient() {
                     >
                         <Link
                             href="#features"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-primary-brand text-white rounded-2xl font-semibold hover:bg-purple-600 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-1"
                         >
                             Explore Features <ChevronRight className="w-4 h-4" />
                         </Link>
@@ -261,7 +261,7 @@ export default function PlatformPageClient() {
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
                             Built for Enterprise Scale
                         </h2>
-                        <p className="mt-4 text-lg text-blue-200/60 max-w-2xl mx-auto">
+                        <p className="mt-4 text-lg text-purple-200/60 max-w-2xl mx-auto">
                             Enterprise-grade security and reliability you can count on
                         </p>
                     </ScrollReveal>
@@ -318,12 +318,12 @@ export default function PlatformPageClient() {
                             See it in action
                         </h2>
                         <p className="text-lg text-text-secondary mb-10">
-                            Schedule a personalized demo and see how PerfectView can transform
+                            Schedule a personalized demo and see how Purple Hub can transform
                             your organization&apos;s performance management.
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 px-10 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-lg hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+                            className="inline-flex items-center gap-2 px-10 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-lg hover:bg-purple-600 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-1"
                         >
                             Request Demo <ArrowRight className="w-5 h-5" />
                         </Link>

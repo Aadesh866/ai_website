@@ -29,7 +29,7 @@ const industries = [
         title: "Technology & SaaS",
         description: "Manage performance across agile, cross-functional product teams with dynamic goal tracking.",
         metric: "42% faster review cycles",
-        gradient: "from-blue-500 to-cyan-400",
+        gradient: "from-purple-500 to-violet-400",
     },
     {
         icon: Factory,
@@ -88,7 +88,7 @@ const useCases = [
     },
     {
         title: "Matrix Organizations",
-        content: "Navigate dotted-line reporting with multi-rater feedback from project leads, functional managers, and peers. PerfectView surfaces cross-functional contributions that traditional hierarchical reviews miss entirely.",
+        content: "Navigate dotted-line reporting with multi-rater feedback from project leads, functional managers, and peers. Purple Hub surfaces cross-functional contributions that traditional hierarchical reviews miss entirely.",
     },
     {
         title: "Agile & Cross-Functional Teams",
@@ -141,12 +141,12 @@ export default function SolutionsPageClient() {
     return (
         <>
             {/* HERO */}
-            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary-dark via-blue-900 to-primary-dark overflow-hidden">
+            <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-primary-dark via-purple-900 to-primary-dark overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <div
                         className="absolute inset-0"
                         style={{
-                            backgroundImage: "radial-gradient(circle at 30% 50%, rgba(59,130,246,0.3) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(6,182,212,0.2) 0%, transparent 50%)",
+                            backgroundImage: "radial-gradient(circle at 30% 50%, rgba(139,92,246,0.3) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(168,85,247,0.2) 0%, transparent 50%)",
                         }}
                     />
                 </div>
@@ -154,7 +154,7 @@ export default function SolutionsPageClient() {
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-blue-200 mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-purple-200 mb-6"
                     >
                         <Sparkles className="w-4 h-4" />
                         Solutions
@@ -174,7 +174,7 @@ export default function SolutionsPageClient() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="mt-6 text-lg text-blue-200/80 max-w-2xl mx-auto"
+                        className="mt-6 text-lg text-purple-200/80 max-w-2xl mx-auto"
                     >
                         Industry-specific solutions that address your unique challenges
                     </motion.p>
@@ -233,7 +233,7 @@ export default function SolutionsPageClient() {
                             <StaggerItem key={role.title}>
                                 <div className="interactive-card group h-full p-8">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center card-icon transition-all duration-400">
+                                        <div className="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center card-icon transition-all duration-400">
                                             <role.icon className="w-6 h-6 text-primary-brand" />
                                         </div>
                                         <h3 className="text-xl font-bold text-primary-dark font-heading">{role.title}</h3>
@@ -249,7 +249,7 @@ export default function SolutionsPageClient() {
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="p-4 rounded-xl bg-blue-50/50 border border-blue-100">
+                                    <div className="p-4 rounded-xl bg-purple-50/50 border border-purple-100">
                                         <p className="text-sm text-text-primary leading-relaxed">
                                             <span className="font-semibold text-primary-brand">Solution:</span>{" "}
                                             {role.solution}
@@ -287,16 +287,16 @@ export default function SolutionsPageClient() {
             </section>
 
             {/* SUCCESS STORY */}
-            <section className="py-24 lg:py-32 bg-blue-50">
+            <section className="py-24 lg:py-32 bg-purple-50">
                 <div className="max-w-5xl mx-auto px-6 lg:px-8">
                     <ScrollReveal>
-                        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-blue-500/5 border border-border">
+                        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-purple-500/5 border border-border">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                                 <div>
                                     <p className="section-label">SUCCESS STORY</p>
                                     <Quote className="w-10 h-10 text-primary-brand/20 mb-4" />
                                     <blockquote className="text-xl font-heading font-bold text-primary-dark leading-snug mb-6">
-                                        &ldquo;PerfectView transformed how we think about talent
+                                        &ldquo;Purple Hub transformed how we think about talent
                                         development. Our manager effectiveness scores jumped 45% in the
                                         first year.&rdquo;
                                     </blockquote>
@@ -345,12 +345,12 @@ export default function SolutionsPageClient() {
                             Calculate your <span className="gradient-text">potential savings</span>
                         </h2>
                         <p className="text-lg text-text-secondary mb-10">
-                            See how much time, money, and effort PerfectView can save your
+                            See how much time, money, and effort Purple Hub can save your
                             organization. Schedule a consultation for a personalized ROI analysis.
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 px-10 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-lg hover:bg-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30 hover:-translate-y-1"
+                            className="inline-flex items-center gap-2 px-10 py-4 bg-primary-brand text-white rounded-2xl font-semibold text-lg hover:bg-purple-600 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/30 hover:-translate-y-1"
                         >
                             Get Your ROI Estimate <ArrowRight className="w-5 h-5" />
                         </Link>

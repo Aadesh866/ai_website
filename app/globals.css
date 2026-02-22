@@ -3,17 +3,17 @@
 
 @theme inline {
   --color-primary-dark: #0F172A;
-  --color-primary-brand: #3B82F6;
-  --color-secondary: #06B6D4;
+  --color-primary-brand: #8B5CF6;
+  --color-secondary: #A855F7;
   --color-accent-warm: #F97316;
   --color-background: #FFFFFF;
   --color-surface: #F8FAFC;
   --color-text-primary: #1E293B;
   --color-text-secondary: #64748B;
   --color-border: #E2E8F0;
-  --color-blue-50: #EFF6FF;
-  --color-blue-100: #DBEAFE;
-  --color-blue-900: #1E3A5F;
+  --color-blue-50: #F5F3FF;
+  --color-blue-100: #EDE9FE;
+  --color-blue-900: #3B1F6E;
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'Space Mono', monospace;
@@ -69,8 +69,8 @@ h6 {
   transform: translateY(-8px);
   border-color: var(--color-primary-brand);
   border-width: 2px;
-  box-shadow: 0 20px 40px -12px rgba(59, 130, 246, 0.25);
-  background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
+  box-shadow: 0 20px 40px -12px rgba(139, 92, 246, 0.25);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 100%);
 }
 
 .interactive-card:hover .card-icon {
@@ -88,7 +88,7 @@ h6 {
 
 .navbar-glass-dark {
   background: rgba(15, 23, 42, 0.85);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
 }
 
 /* Gradient text */
@@ -113,7 +113,7 @@ h6 {
 }
 
 .animated-gradient {
-  background: linear-gradient(-45deg, #0F172A, #1E3A5F, #1E40AF, #0F172A, #172554);
+  background: linear-gradient(-45deg, #0F172A, #3B1F6E, #5B21B6, #0F172A, #4C1D95);
   background-size: 400% 400%;
   animation: mesh-gradient 15s ease infinite;
 }
@@ -194,7 +194,7 @@ h6 {
 
 /* Selection color */
 ::selection {
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(139, 92, 246, 0.2);
   color: var(--color-primary-dark);
 }
 

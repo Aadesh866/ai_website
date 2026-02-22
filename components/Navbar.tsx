@@ -45,7 +45,7 @@ export default function Navbar() {
                             <Zap className="w-5 h-5 text-white" />
                         </div>
                         <span className="font-heading text-xl font-bold text-primary-dark">
-                            PerfectView
+                            Purple Hub
                         </span>
                     </Link>
 
@@ -58,8 +58,8 @@ export default function Navbar() {
                                 className={cn(
                                     "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300",
                                     pathname === link.href
-                                        ? "text-primary-brand bg-blue-50"
-                                        : "text-text-secondary hover:text-primary-brand hover:bg-blue-50/50"
+                                        ? "text-primary-brand bg-purple-50"
+                                        : "text-text-secondary hover:text-primary-brand hover:bg-purple-50/50"
                                 )}
                             >
                                 {link.label}
@@ -71,7 +71,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-3">
                         <Link
                             href="/contact"
-                            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-brand text-white rounded-xl font-medium text-sm hover:bg-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5"
+                            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-brand text-white rounded-xl font-medium text-sm hover:bg-purple-600 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 hover:-translate-y-0.5"
                         >
                             Get a Demo
                         </Link>
@@ -103,7 +103,7 @@ export default function Navbar() {
                                     className={cn(
                                         "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
                                         pathname === link.href
-                                            ? "text-primary-brand bg-blue-50"
+                                            ? "text-primary-brand bg-purple-50"
                                             : "text-text-secondary hover:text-primary-brand hover:bg-surface"
                                     )}
                                 >
@@ -112,7 +112,7 @@ export default function Navbar() {
                             ))}
                             <Link
                                 href="/contact"
-                                className="block mt-4 text-center px-5 py-3 bg-primary-brand text-white rounded-xl font-medium text-sm hover:bg-blue-600 transition-colors"
+                                className="block mt-4 text-center px-5 py-3 bg-primary-brand text-white rounded-xl font-medium text-sm hover:bg-purple-600 transition-colors"
                             >
                                 Get a Demo
                             </Link>

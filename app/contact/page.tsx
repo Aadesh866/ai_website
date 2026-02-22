@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-    title: "Contact Us | PerfectView",
+    title: "Contact Us | Purple Hub",
     description:
         "Ready to transform how your organization approaches talent? Get in touch for a demo, pricing, or questions about our AI-powered performance management platform.",
 };

@@ -23,13 +23,13 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PerfectView | AI-Powered Performance Management Platform",
+  title: "Purple Hub | AI-Powered Performance Management Platform",
   description:
     "The performance intelligence platform built for how work actually happens today. Continuous feedback, AI-powered insights, and data-driven talent decisions.",
   keywords:
     "performance management, AI, continuous feedback, HR tech, talent management, employee performance",
   openGraph: {
-    title: "PerfectView | AI-Powered Performance Management Platform",
+    title: "Purple Hub | AI-Powered Performance Management Platform",
     description:
       "The performance intelligence platform built for how work actually happens today.",
     type: "website",
